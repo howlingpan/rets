@@ -26,7 +26,7 @@ class OneXSearchCursor(Base):
         delim = '\t'  # Default to tab delimited
         columns = []
         response.raw.decode_content = True
-        from io import StringIO
+        from StringIO import StringIO
         events = ET.iterparse(StringIO(response.text.encode('utf8')))
 
         results = []
