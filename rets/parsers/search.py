@@ -27,7 +27,7 @@ class OneXSearchCursor(Base):
         columns = []
         response.raw.decode_content = True
         from io import StringIO
-        events = ET.iterparse(StringIO(response.text))
+        events = ET.iterparse(StringIO(response.text.encode('utf8')))
 
         results = []
         for event, elem in events:
